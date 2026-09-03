@@ -10,21 +10,29 @@ Helix can import a repository URL, inspect the `plugins/` directory, and show ea
 .
 ├── plugins.json
 └── plugins/
-    ├── data-cleaner/
+    ├── data-toolkit/
     │   ├── plugin.json
     │   └── skills/
-    │       └── data-cleaner/SKILL.md
-    └── acme-mcp/
+    │       ├── clean-table/
+    │       │   └── SKILL.md
+    │       └── validate-table/
+    │           └── SKILL.md
+    └── acme-workspace/
         ├── plugin.json
         ├── mcp.json
         └── skills/
-            └── acme-mcp/SKILL.md
+            ├── search-pages/
+            │   └── SKILL.md
+            └── draft-pages/
+                └── SKILL.md
 ```
 
 ## Demo Plugins
 
-- `data-cleaner`: a Skill-only plugin. It installs local skills and does not request MCP access.
-- `acme-mcp`: a Hosted MCP plugin. It demonstrates how a remote HTTPS MCP server can be declared while keeping local command execution out of user-provided config.
+- `data-toolkit`: a Skill-only plugin package. It installs the `clean-table` and `validate-table` skills and does not request MCP access.
+- `acme-workspace`: a Hosted MCP plugin package. It installs the `search-pages` and `draft-pages` skills, and demonstrates how a remote HTTPS MCP server can be declared while keeping local command execution out of user-provided config.
+
+The outer directory is the plugin package ID. Directories under `skills/` are individual skill IDs. They are intentionally different in this demo to avoid implying that plugin IDs and skill IDs must match.
 
 ## Import Contract
 
@@ -45,16 +53,20 @@ Each plugin root contains one `plugin.json` file. This is the public import mani
 ```json
 {
   "schemaVersion": "1.0",
-  "id": "data-cleaner",
-  "name": "Data Cleaner",
+  "id": "data-toolkit",
+  "name": "Data Toolkit",
   "version": "0.1.0",
   "publisher": "Advai",
-  "description": "Clean and validate table data with Skill-only workflows.",
+  "description": "A Skill-only plugin package for cleaning and validating table data.",
   "category": "数据与分析",
   "skills": [
     {
-      "id": "data-cleaner",
-      "path": "./skills/data-cleaner/SKILL.md"
+      "id": "clean-table",
+      "path": "./skills/clean-table/SKILL.md"
+    },
+    {
+      "id": "validate-table",
+      "path": "./skills/validate-table/SKILL.md"
     }
   ]
 }

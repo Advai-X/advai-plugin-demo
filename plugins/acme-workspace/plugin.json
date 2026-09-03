@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "id": "acme-workspace",
+  "name": "Acme Workspace",
+  "version": "0.1.0",
+  "publisher": "Advai",
+  "description": "A hosted MCP plugin package for Acme workspace search and page authoring.",
+  "longDescription": "Acme Workspace demonstrates the proposed user-importable hosted MCP shape. The plugin contains multiple skills that share one remote HTTPS MCP server.",
+  "category": "效率提升",
+  "homepage": "https://github.com/Advai-X/advai-plugin-demo/tree/main/plugins/acme-workspace",
+  "repository": "https://github.com/Advai-X/advai-plugin-demo",
+  "license": "MIT",
+  "keywords": ["mcp", "hosted-mcp", "oauth", "demo"],
+  "capabilities": ["Hosted MCP", "OAuth", "Write confirmation"],
+  "brandColor": "#0F8B8D",
+  "skills": [
+    {
+      "id": "search-pages",
+      "name": "search-pages",
+      "description": "Search and review Acme workspace pages through the hosted MCP server.",
+      "path": "./skills/search-pages/SKILL.md"
+    },
+    {
+      "id": "draft-pages",
+      "name": "draft-pages",
+      "description": "Create or update draft Acme workspace pages through the hosted MCP server.",
+      "path": "./skills/draft-pages/SKILL.md"
+    }
+  ],
+  "mcpServers": "./mcp.json",
+  "starterPrompts": [
+    "Search Acme pages for launch notes.",
+    "Create a draft Acme page from this summary.",
+    "Review Acme MCP tools and permissions."
+  ]
+}

@@ -16,8 +16,8 @@ This document describes the demo format for user-importable plugin repositories 
   "manifest": "plugin.json",
   "plugins": [
     {
-      "id": "data-cleaner",
-      "path": "./plugins/data-cleaner"
+      "id": "data-toolkit",
+      "path": "./plugins/data-toolkit"
     }
   ]
 }
@@ -63,10 +63,10 @@ Optional fields:
 
 ```json
 {
-  "id": "data-cleaner",
-  "name": "data-cleaner",
+  "id": "clean-table",
+  "name": "clean-table",
   "description": "Inspect and clean tabular data.",
-  "path": "./skills/data-cleaner/SKILL.md"
+  "path": "./skills/clean-table/SKILL.md"
 }
 ```
 
@@ -74,6 +74,7 @@ Rules:
 
 - Skill paths must point to `SKILL.md` files inside the plugin root.
 - Skill IDs must be unique within a repository import.
+- Plugin IDs and skill IDs are separate namespaces. The plugin package directory may be `plugins/data-toolkit`, while its skills may live at `skills/clean-table/SKILL.md` and `skills/validate-table/SKILL.md`.
 - Importers may mark skills as needing review when the file mentions shell, network, file writes, or MCP.
 
 ## Hosted MCP

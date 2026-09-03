@@ -1,11 +1,11 @@
 ---
-name: data-cleaner
-description: Use when the user wants to inspect, clean, normalize, deduplicate, or validate tabular data before import or analysis.
+name: clean-table
+description: Use when the user wants to clean, normalize, or deduplicate tabular data before import or analysis.
 ---
 
-# Data Cleaner
+# Clean Table
 
-Use this skill for CSV, spreadsheet, or table-cleanup workflows.
+Use this skill for CSV, spreadsheet, or table cleanup workflows.
 
 ## Workflow
 
@@ -20,4 +20,3 @@ Use this skill for CSV, spreadsheet, or table-cleanup workflows.
 - Do not overwrite the source file unless the user explicitly asks.
 - Ask before deleting rows.
 - Treat schema changes, value normalization, and deduplication as user-visible changes.
-

@@ -7,12 +7,12 @@
   "manifest": "plugin.json",
   "plugins": [
     {
-      "id": "data-cleaner",
-      "path": "./plugins/data-cleaner"
+      "id": "data-toolkit",
+      "path": "./plugins/data-toolkit"
     },
     {
-      "id": "acme-mcp",
-      "path": "./plugins/acme-mcp"
+      "id": "acme-workspace",
+      "path": "./plugins/acme-workspace"
     }
   ]
 }
