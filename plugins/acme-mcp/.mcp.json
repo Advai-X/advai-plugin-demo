@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "acme": {
+      "type": "http",
+      "url": "https://mcp.example.com/sse",
+      "auth": "oauth",
+      "scopes": ["pages.read", "pages.write"]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "name": "advai-plugin-demo",
+  "displayName": "Advai Plugin Demo",
+  "description": "Example Git repository containing multiple Helix plugins.",
+  "pluginsRoot": "./plugins",
+  "plugins": [
+    {
+      "id": "data-cleaner",
+      "path": "./plugins/data-cleaner"
+    },
+    {
+      "id": "acme-mcp",
+      "path": "./plugins/acme-mcp"
+    }
+  ]
+}
+

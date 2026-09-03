@@ -1,0 +1,33 @@
+{
+  "name": "advai-plugin-demo",
+  "interface": {
+    "displayName": "Advai Plugin Demo"
+  },
+  "plugins": [
+    {
+      "name": "data-cleaner",
+      "source": {
+        "source": "local",
+        "path": "./plugins/data-cleaner"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data & Analytics"
+    },
+    {
+      "name": "acme-mcp",
+      "source": {
+        "source": "local",
+        "path": "./plugins/acme-mcp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
+

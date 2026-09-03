@@ -1,0 +1,28 @@
+{
+  "name": "data-cleaner",
+  "version": "0.1.0",
+  "description": "Clean, normalize, and validate spreadsheet-like data with local Helix skills.",
+  "author": {
+    "name": "Advai",
+    "url": "https://github.com/Advai-X"
+  },
+  "homepage": "https://github.com/Advai-X/advai-plugin-demo/tree/main/plugins/data-cleaner",
+  "repository": "https://github.com/Advai-X/advai-plugin-demo",
+  "license": "MIT",
+  "keywords": ["data", "spreadsheet", "quality", "skill-only"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Data Cleaner",
+    "shortDescription": "Clean and validate table data with Skill-only workflows.",
+    "longDescription": "Data Cleaner is a Skill-only plugin. It adds local instructions for profiling columns, normalizing values, detecting duplicates, and producing data-quality summaries without declaring any MCP server.",
+    "developerName": "Advai",
+    "category": "Data & Analytics",
+    "capabilities": ["Skill-only"],
+    "defaultPrompt": [
+      "Review this CSV and suggest cleanup rules.",
+      "Find likely duplicate rows in this table.",
+      "Summarize data-quality issues before import."
+    ],
+    "brandColor": "#0F8B8D"
+  }
+}
