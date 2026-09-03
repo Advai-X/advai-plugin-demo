@@ -1,10 +1,13 @@
 {
-  "mcpServers": {
-    "acme": {
-      "type": "http",
+  "mcpServers": [
+    {
+      "id": "acme",
+      "name": "Acme MCP",
+      "transport": "http",
       "url": "https://mcp.example.com/sse",
       "auth": "oauth",
       "scopes": ["pages.read", "pages.write"]
     }
-  }
+  ]
 }
+

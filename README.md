@@ -9,15 +9,14 @@ Helix can import a repository URL, inspect the `plugins/` directory, and show ea
 ```text
 .
 ├── helix-plugin-repository.json
-├── .agents/plugins/marketplace.json
 └── plugins/
     ├── data-cleaner/
-    │   ├── .codex-plugin/plugin.json
+    │   ├── helix-plugin.json
     │   └── skills/
     │       └── data-cleaner/SKILL.md
     └── acme-mcp/
-        ├── .codex-plugin/plugin.json
-        ├── .mcp.json
+        ├── helix-plugin.json
+        ├── helix-mcp.json
         └── skills/
             └── acme-mcp/SKILL.md
 ```
@@ -34,8 +33,37 @@ An importer should:
 1. Clone or fetch the Git repository.
 2. Read `helix-plugin-repository.json`.
 3. Resolve every plugin path under `plugins/`.
-4. Read each `.codex-plugin/plugin.json`.
+4. Read each `helix-plugin.json`.
 5. Validate paths stay inside the repository.
 6. Allow `skills` and remote HTTPS `mcpServers`.
 7. Reject local `command`, `args`, arbitrary environment injection, and non-HTTPS MCP URLs for user-imported plugins.
 
+## Plugin Manifest
+
+Each plugin root contains one `helix-plugin.json` file. This is the Helix public import format and intentionally does not use Codex-specific names.
+
+```json
+{
+  "schemaVersion": "1.0",
+  "id": "data-cleaner",
+  "name": "Data Cleaner",
+  "version": "0.1.0",
+  "publisher": "Advai",
+  "description": "Clean and validate table data with Skill-only workflows.",
+  "category": "数据与分析",
+  "skills": [
+    {
+      "id": "data-cleaner",
+      "path": "./skills/data-cleaner/SKILL.md"
+    }
+  ]
+}
+```
+
+Hosted MCP plugins may reference `helix-mcp.json`:
+
+```json
+{
+  "mcpServers": "./helix-mcp.json"
+}
+```
