@@ -4,7 +4,7 @@
   "displayName": "Advai Plugin Demo",
   "description": "Example Git repository containing multiple Helix plugins.",
   "pluginsRoot": "./plugins",
-  "manifest": "helix-plugin.json",
+  "manifest": "plugin.json",
   "plugins": [
     {
       "id": "data-cleaner",

@@ -21,11 +21,10 @@
       "path": "./skills/acme-mcp/SKILL.md"
     }
   ],
-  "mcpServers": "./helix-mcp.json",
+  "mcpServers": "./mcp.json",
   "starterPrompts": [
     "Search Acme pages for launch notes.",
     "Create a draft Acme page from this summary.",
     "Review Acme MCP tools and permissions."
   ]
 }
-

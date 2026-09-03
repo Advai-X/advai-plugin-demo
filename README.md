@@ -8,15 +8,15 @@ Helix can import a repository URL, inspect the `plugins/` directory, and show ea
 
 ```text
 .
-├── helix-plugin-repository.json
+├── plugins.json
 └── plugins/
     ├── data-cleaner/
-    │   ├── helix-plugin.json
+    │   ├── plugin.json
     │   └── skills/
     │       └── data-cleaner/SKILL.md
     └── acme-mcp/
-        ├── helix-plugin.json
-        ├── helix-mcp.json
+        ├── plugin.json
+        ├── mcp.json
         └── skills/
             └── acme-mcp/SKILL.md
 ```
@@ -31,16 +31,16 @@ Helix can import a repository URL, inspect the `plugins/` directory, and show ea
 An importer should:
 
 1. Clone or fetch the Git repository.
-2. Read `helix-plugin-repository.json`.
+2. Read `plugins.json`.
 3. Resolve every plugin path under `plugins/`.
-4. Read each `helix-plugin.json`.
+4. Read each `plugin.json`.
 5. Validate paths stay inside the repository.
 6. Allow `skills` and remote HTTPS `mcpServers`.
 7. Reject local `command`, `args`, arbitrary environment injection, and non-HTTPS MCP URLs for user-imported plugins.
 
 ## Plugin Manifest
 
-Each plugin root contains one `helix-plugin.json` file. This is the Helix public import format and intentionally does not use Codex-specific names.
+Each plugin root contains one `plugin.json` file. This is the public import manifest for a Helix plugin repository.
 
 ```json
 {
@@ -60,10 +60,10 @@ Each plugin root contains one `helix-plugin.json` file. This is the Helix public
 }
 ```
 
-Hosted MCP plugins may reference `helix-mcp.json`:
+Hosted MCP plugins may reference `mcp.json`:
 
 ```json
 {
-  "mcpServers": "./helix-mcp.json"
+  "mcpServers": "./mcp.json"
 }
 ```

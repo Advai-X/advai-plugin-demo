@@ -1,10 +1,10 @@
-# Helix Importable Plugin Format
+# Importable Plugin Format
 
-This document describes the demo format for Helix user-importable plugins.
+This document describes the demo format for user-importable plugin repositories in Helix.
 
 ## Repository Manifest
 
-`helix-plugin-repository.json` lives at the repository root.
+`plugins.json` lives at the repository root.
 
 ```json
 {
@@ -13,7 +13,7 @@ This document describes the demo format for Helix user-importable plugins.
   "displayName": "Advai Plugin Demo",
   "description": "Example Git repository containing multiple Helix plugins.",
   "pluginsRoot": "./plugins",
-  "manifest": "helix-plugin.json",
+  "manifest": "plugin.json",
   "plugins": [
     {
       "id": "data-cleaner",
@@ -26,13 +26,13 @@ This document describes the demo format for Helix user-importable plugins.
 Rules:
 
 - `pluginsRoot` and every plugin `path` must be relative paths inside the repository.
-- `manifest` defaults to `helix-plugin.json`.
+- `manifest` defaults to `plugin.json`.
 - A repository may contain one or many plugins.
 - Importers should reject symlink or traversal paths that escape the cloned repository.
 
 ## Plugin Manifest
 
-Each plugin has one `helix-plugin.json` at the plugin root.
+Each plugin has one `plugin.json` at the plugin root.
 
 Required fields:
 
@@ -78,7 +78,7 @@ Rules:
 
 ## Hosted MCP
 
-`mcpServers` may point to `helix-mcp.json`.
+`mcpServers` may point to `mcp.json`.
 
 ```json
 {
@@ -112,4 +112,3 @@ Rejected for user-imported plugins:
 - CLI adapter definitions
 - non-HTTPS URLs
 - localhost or private-network MCP URLs by default
-
