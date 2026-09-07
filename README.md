@@ -10,6 +10,7 @@ It is intended for end-to-end testing rather than placeholder UI data:
 - the MCP endpoint exposes real documentation search, page retrieval, and code-sample tools.
 
 The plugin is not an official Microsoft plugin. Microsoft owns and operates the remote MCP service.
+The demo icon is sourced from the Microsoft Learn website favicon for identification in import tests. Microsoft and Microsoft Learn are trademarks of Microsoft Corporation.
 
 ## Repository Layout
 
