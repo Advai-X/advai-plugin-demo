@@ -18,6 +18,8 @@ The plugin is not an official Microsoft plugin. Microsoft owns and operates the 
 ├── plugins.json
 └── plugins/
     └── microsoft-learn-docs/
+        ├── assets/
+        │   └── icon.png
         ├── plugin.json
         ├── mcp.json
         └── skills/

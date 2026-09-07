@@ -53,9 +53,28 @@ Optional fields:
 - `license`
 - `keywords`
 - `capabilities`
+- `icon`
 - `brandColor`
 - `starterPrompts`
 - `mcpServers`
+
+### Plugin Icon
+
+`icon` is a repository-relative path from the plugin root to the image used in plugin lists, details, import results, and conversation capability labels.
+
+```json
+{
+  "icon": "./assets/icon.png"
+}
+```
+
+Rules:
+
+- The path must stay inside the plugin root and must not traverse a symbolic link outside it.
+- PNG, JPEG, and WebP are supported. File content is validated independently of the extension.
+- The image must not exceed 512 KB.
+- Use a square image with a simple silhouette; 256 x 256 pixels is recommended.
+- When `icon` is omitted, Helix displays a generated monogram for backward compatibility.
 
 ## Skills
 

@@ -7,6 +7,7 @@
   "description": "Search Microsoft Learn documentation and retrieve official code samples through Microsoft's public MCP server.",
   "longDescription": "An importable Helix plugin maintained by Advai that connects to the public, read-only Microsoft Learn MCP server. It supports documentation research, full-page retrieval, and official code-sample discovery without requiring an account or access token.",
   "category": "代码与仓库",
+  "icon": "./assets/icon.png",
   "homepage": "https://learn.microsoft.com/en-us/training/support/mcp",
   "repository": "https://github.com/Advai-X/advai-plugin-demo",
   "license": "MIT",
