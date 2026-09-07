@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "id": "microsoft-learn-docs",
+  "name": "Microsoft Learn Research",
+  "version": "1.0.0",
+  "publisher": "Advai",
+  "description": "Search Microsoft Learn documentation and retrieve official code samples through Microsoft's public MCP server.",
+  "longDescription": "An importable Helix plugin maintained by Advai that connects to the public, read-only Microsoft Learn MCP server. It supports documentation research, full-page retrieval, and official code-sample discovery without requiring an account or access token.",
+  "category": "代码与仓库",
+  "homepage": "https://learn.microsoft.com/en-us/training/support/mcp",
+  "repository": "https://github.com/Advai-X/advai-plugin-demo",
+  "license": "MIT",
+  "keywords": ["microsoft-learn", "documentation", "code-samples", "hosted-mcp"],
+  "capabilities": ["Hosted MCP", "Read-only", "No auth"],
+  "brandColor": "#2563EB",
+  "skills": [
+    {
+      "id": "microsoft-docs-research",
+      "name": "microsoft-docs-research",
+      "description": "Research Microsoft and Azure topics using official documentation, then fetch full pages when more context is required.",
+      "path": "./skills/microsoft-docs-research/SKILL.md"
+    },
+    {
+      "id": "microsoft-code-samples",
+      "name": "microsoft-code-samples",
+      "description": "Find current code examples from Microsoft Learn for Azure, .NET, Microsoft 365, and related developer platforms.",
+      "path": "./skills/microsoft-code-samples/SKILL.md"
+    }
+  ],
+  "mcpServers": "./mcp.json",
+  "starterPrompts": [
+    "Find the current Microsoft Learn guidance for Azure Container Apps scaling.",
+    "Show an official C# example for authenticating with Azure Identity.",
+    "Compare two Microsoft Learn pages and summarize the differences."
+  ]
+}

@@ -2,17 +2,13 @@
   "schemaVersion": "1.0",
   "name": "advai-plugin-demo",
   "displayName": "Advai Plugin Demo",
-  "description": "Example Git repository containing multiple Helix plugins.",
+  "description": "Importable Helix plugin backed by the public Microsoft Learn MCP server.",
   "pluginsRoot": "./plugins",
   "manifest": "plugin.json",
   "plugins": [
     {
-      "id": "data-toolkit",
-      "path": "./plugins/data-toolkit"
-    },
-    {
-      "id": "acme-workspace",
-      "path": "./plugins/acme-workspace"
+      "id": "microsoft-learn-docs",
+      "path": "./plugins/microsoft-learn-docs"
     }
   ]
 }

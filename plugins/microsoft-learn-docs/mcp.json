@@ -1,0 +1,12 @@
+{
+  "mcpServers": [
+    {
+      "id": "microsoft-learn",
+      "name": "Microsoft Learn MCP",
+      "description": "Read-only access to official Microsoft Learn documentation and code samples.",
+      "transport": "http",
+      "url": "https://learn.microsoft.com/api/mcp",
+      "auth": "none"
+    }
+  ]
+}

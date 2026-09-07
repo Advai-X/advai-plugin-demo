@@ -11,13 +11,13 @@ This document describes the demo format for user-importable plugin repositories 
   "schemaVersion": "1.0",
   "name": "advai-plugin-demo",
   "displayName": "Advai Plugin Demo",
-  "description": "Example Git repository containing multiple Helix plugins.",
+  "description": "Importable Helix plugin backed by the public Microsoft Learn MCP server.",
   "pluginsRoot": "./plugins",
   "manifest": "plugin.json",
   "plugins": [
     {
-      "id": "data-toolkit",
-      "path": "./plugins/data-toolkit"
+      "id": "microsoft-learn-docs",
+      "path": "./plugins/microsoft-learn-docs"
     }
   ]
 }
@@ -63,10 +63,10 @@ Optional fields:
 
 ```json
 {
-  "id": "clean-table",
-  "name": "clean-table",
-  "description": "Inspect and clean tabular data.",
-  "path": "./skills/clean-table/SKILL.md"
+  "id": "microsoft-docs-research",
+  "name": "microsoft-docs-research",
+  "description": "Research Microsoft technologies using current Microsoft Learn documentation.",
+  "path": "./skills/microsoft-docs-research/SKILL.md"
 }
 ```
 
@@ -74,23 +74,23 @@ Rules:
 
 - Skill paths must point to `SKILL.md` files inside the plugin root.
 - Skill IDs must be unique within a repository import.
-- Plugin IDs and skill IDs are separate namespaces. The plugin package directory may be `plugins/data-toolkit`, while its skills may live at `skills/clean-table/SKILL.md` and `skills/validate-table/SKILL.md`.
+- Plugin IDs and skill IDs are separate namespaces.
 - Importers may mark skills as needing review when the file mentions shell, network, file writes, or MCP.
 
 ## Hosted MCP
 
-`mcpServers` may point to `mcp.json`.
+`mcpServers` may point to `mcp.json`. This repository uses a live, public endpoint:
 
 ```json
 {
   "mcpServers": [
     {
-      "id": "acme",
-      "name": "Acme MCP",
+      "id": "microsoft-learn",
+      "name": "Microsoft Learn MCP",
+      "description": "Read-only access to official Microsoft Learn documentation and code samples.",
       "transport": "http",
-      "url": "https://mcp.example.com/sse",
-      "auth": "oauth",
-      "scopes": ["pages.read", "pages.write"]
+      "url": "https://learn.microsoft.com/api/mcp",
+      "auth": "none"
     }
   ]
 }
@@ -106,10 +106,16 @@ For user-imported plugins, the first public version should only allow hosted MCP
 
 Rejected for user-imported plugins:
 
-- Local `command`
+- local `command`
 - `args`
 - arbitrary `env`
 - arbitrary HTTP/API adapter definitions
 - CLI adapter definitions
 - non-HTTPS URLs
 - localhost or private-network MCP URLs by default
+
+## Runtime Verification
+
+The Microsoft Learn MCP endpoint has been verified with MCP protocol version `2025-06-18`. A successful `tools/list` response currently includes `microsoft_docs_search`, `microsoft_docs_fetch`, and `microsoft_code_sample_search`.
+
+Remote services can change independently of this repository. Helix should perform tool discovery when the MCP server is enabled and report connection failures separately from manifest validation.
