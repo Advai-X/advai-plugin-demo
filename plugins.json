@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "name": "advai-plugin-demo",
   "displayName": "Advai Plugin Demo",
-  "description": "Importable Helix plugin backed by the public Microsoft Learn MCP server.",
+  "description": "Importable plugin example featuring local skills and a public, read-only hosted MCP server.",
   "pluginsRoot": "./plugins",
   "manifest": "plugin.json",
   "plugins": [
